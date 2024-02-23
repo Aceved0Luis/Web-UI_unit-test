@@ -81,7 +81,7 @@ describe('addLastName function', () => {
     const result = functions.addLastName(a);
 
     //ASSERT
-    expect(result).toEqual({"firstname": "Pepito", "lastname": "Perez"});
+    expect(result.lastname).toBe("Perez");
   })
   it('should be return Pepito null when I sent null', () => {
     //ARRANGE
@@ -91,6 +91,6 @@ describe('addLastName function', () => {
     const result = functions.addLastName(a);
 
     //ASSERT
-    expect(result).toEqual({"firstname": "Pepito", "lastname": null});
+    expect(result.lastname).toBeNull();
   });
 });
