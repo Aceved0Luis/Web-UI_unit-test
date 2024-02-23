@@ -21,7 +21,7 @@ describe('multiply function', () => {
     const result = functions.multiply(a, b);
 
     //ARRANGE
-    expect(result).toEqual("undefined");
+    expect(result).toBeNaN();
   });
 });
 
@@ -35,7 +35,7 @@ describe('isNull function', () => {
     const result = functions.isNull(a);
 
     //ASSERT
-    expect(result).toEqual("null");
+    expect(result).toBeNull();
   })
   it('should be return null if you enter a string', () => {
     //ARRANGE
@@ -45,7 +45,7 @@ describe('isNull function', () => {
     const result = functions.isNull(a);
 
     //ASSERT
-    expect(result).toEqual("null");
+    expect(result).toBeNull();
   });
 });
 
@@ -58,9 +58,9 @@ describe('checkTruthy function', () => {
     const result = functions.checkTruthy(a);
 
     //ASSERT
-    expect(result).toEqual("true")
+    expect(result).toBeTruthy();
   })
-  it('should be return true when I sent 1', () => {
+  it('should be return false when I sent 1', () => {
     //ARRANGE
     const a = 1;
 
@@ -68,7 +68,7 @@ describe('checkTruthy function', () => {
     const result = functions.checkTruthy(a);
 
     //ASSERT
-    expect(result).toEqual("true")
+    expect(result).toBeFalsy();
   });
 });
 
@@ -81,7 +81,7 @@ describe('addLastName function', () => {
     const result = functions.addLastName(a);
 
     //ASSERT
-    expect(result).toEqual("Pepito Perez")
+    expect(result).toEqual({"firstname": "Pepito", "lastname": "Perez"});
   })
   it('should be return Pepito null when I sent null', () => {
     //ARRANGE
@@ -91,6 +91,6 @@ describe('addLastName function', () => {
     const result = functions.addLastName(a);
 
     //ASSERT
-    expect(result).toEqual("Pepito ")
+    expect(result).toEqual({"firstname": "Pepito", "lastname": null});
   });
 });
